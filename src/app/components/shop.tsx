@@ -10,12 +10,13 @@ type CartItem = {
 };
 
 const products = [
-  { name: 'GA for one day', price: 30, img: '/item1.png' },
-  { name: 'GA for two day', price: 50, img: '/item1.png' },
-  { name: 'Party Hat', price: 10, img: '/item1.png' },
+  { name: 'Challenge Day 1 & Autumn Cup II Day 1 Saturday September 20th', price: 35, img: '/ticket_white.png' },
+  { name: 'Challenge Day 2 & Autumn Cup II Day 2 Sunday September 21st', price: 35, img: '/ticket_white.png' },
+  { name: 'Challenge & Autumn Cup II 2 days Saturday & Sunday September 20 & 21', price: 50, img: '/tickets_white.png' },
+  { name: 'Party Hat', price: 5, img: '/item1.png' },
   { name: 'Party blower', price: 5, img: '/item2.png' },
-  { name: 'Hand Clapper', price: 5, img: '/item3.png' },
-  { name: 'Metal Cowbells', price: 10, img: '/item4.png' },
+  { name: 'Hand Clapper', price: 3, img: '/item3.png' },
+  { name: 'Metal Cowbells', price: 8, img: '/item4.png' },
 ];
 
 export default function Shop() {
@@ -81,28 +82,29 @@ export default function Shop() {
   ))}
 </div>
 
-<div className="cart_section">
-  <h3>Cart:</h3>
-  {cart.length === 0}
-  {cart.map(({ name, quantity, price }) => (
-    <div key={name}>
-      {name} — {quantity} × ${price} = ${quantity * price}
-    </div>
-  ))}
-  {cart.length > 0 && (
-    <>
-      <h4>
-        Total amount: ${cart.reduce((acc, item) => acc + item.price * item.quantity, 0)}
-      </h4>
-      <button
-        onClick={handleCheckout}
-        className="checkout checkout_button text-white px-4 py-2 rounded mt-4"
-      >
-        Checkout
-      </button>
-    </>
-  )}
-</div>
+{cart.length > 0 && (
+  <div className="cart_section">
+    <h3>Cart:</h3>
+
+    {cart.map(({ name, quantity, price }) => (
+      <div key={name}>
+        {name} — {quantity} × ${price} = ${(quantity * price).toFixed(2)}
+      </div>
+    ))}
+
+    <h4>
+      Total amount: $
+      {cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}
+    </h4>
+
+    <button
+      onClick={handleCheckout}
+      className="checkout checkout_button text-white px-4 py-2 rounded mt-4"
+    >
+      Checkout
+    </button>
+  </div>
+)}
     </>
   );
 }

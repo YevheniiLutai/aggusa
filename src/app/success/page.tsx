@@ -1,6 +1,7 @@
 // src/app/success/page.tsx
 import Stripe from 'stripe';
 import Image from 'next/image';
+import FallingLeaves from '../components/FallingLeaves';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-06-30.basil',
@@ -12,8 +13,8 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
   if (!sessionId) {
     return (
       <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h1>❌ Немає session_id</h1>
-        <p>Посилання некоректне або відсутній параметр.</p>
+        <FallingLeaves />
+        <h1>❌ Sorry</h1>
       </div>
     );
   }
@@ -30,6 +31,7 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
     if (!charge?.receipt_url) {
       return (
         <div className='success'>
+            <FallingLeaves />
             <h1 className='success_title'> Thank you for the payment! ✅</h1>
             <img src="/party.png" alt="Payment Success" />
         </div>
@@ -38,6 +40,7 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
 
     return (
         <div className='success'>
+            <FallingLeaves />
             <h1 className='success_title'> Thank you for the payment! ✅</h1>
             <a href={charge.receipt_url} target="_blank" rel="noopener noreferrer" className='cancel_button'>
                 Viev receipt 📄        
@@ -48,6 +51,7 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
   } catch (err) {
     return (
         <div className='success'>
+            <FallingLeaves />
             <h1 className='success_title'> Thank you for the payment! ✅</h1>
             <img src="/party.png" alt="Payment Success" />
         </div>

@@ -10,10 +10,10 @@ const Footer = () => {
       </p>
       <div className="footer_icon">
         <a href="https://www.instagram.com/autumn_cup_agg_usa/" target="_blank" rel="noopener noreferrer">
-          <img src="/instagram.svg" alt="Instagram" />
+          <img src="/instagram_white.png" alt="Instagram" />
         </a>
         <a href="https://youtube.com/@aggusa_media?si=BDbKOe9zOh5vssxf" target="_blank" rel="noopener noreferrer">
-          <img src="/youtube.svg" alt="YouTube" />
+          <img src="/youtube_white.png" alt="YouTube" />
         </a>
       </div>
     </div>

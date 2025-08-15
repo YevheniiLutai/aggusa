@@ -9,11 +9,13 @@ import './globals.css';
 import Shop from "./components/shop";
 import Footer from "./components/footer";
 import Address from "./components/address";
+import FallingLeaves from "./components/FallingLeaves";
 
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center align-center ">
+    <main className="flex flex-col items-center align-center">
+      <FallingLeaves />
       <h1 className="container mx-auto title">Buy Tickets</h1>
       <p className="container mx-auto sub_title">Autumn Cup AGG USA</p>
       <CountdownTimer />
