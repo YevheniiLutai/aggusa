@@ -31,7 +31,7 @@
 
 :root {
   --background: #C40F0F;
-  --foreground: #77BEF0;
+  --foreground: #C40F0F;
 }
 
 @theme inline {
@@ -98,7 +98,7 @@ h1, div, p {
 }
 
 body {
-  background: #77BEF0;
+  background: #C40F0F;
   color: #fff !important;
   font-family: "IBM Plex Sans", sans-serif;
 }
@@ -162,7 +162,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
   width: 100%;
   height: auto;
@@ -176,7 +176,7 @@ body {
 
 .buy_description {
   font-size: 18px;
-  line-height: 18px;
+  line-height: 24px !important;
   font-weight: 700;
   text-align: center;
   margin-bottom: 10px;
@@ -245,7 +245,7 @@ body {
 }
 .map {
   display: flex;
-  width: 100%;
+  max-width: 700px;
   height: auto;
   padding: 0px 15px;
   text-align: center;
@@ -269,11 +269,6 @@ body {
 }
 
 @media (min-width: 601px) and (max-width: 999px) {
-  .map {
-    display: flex;
-    width: 500px;
-    height: auto;
-  }
   .title {
     font-size: 70px;
   }
@@ -299,7 +294,7 @@ body {
   .buy_block {
     display: flex;
     width: 300px;
-    height: 300px;
+    height: 410px;
   }
   .buy_img {
     display: flex;
@@ -360,9 +355,6 @@ body {
   .buy_img img {
     display: flex;
   }
-  .map {
-    width: 500px;
-  }
 }
 
 .buy_wrapper {
@@ -380,7 +372,8 @@ body {
 
 .buy_img {
   width: 100%;
-  max-width: 200px;
+  max-width: 185px;
+  min-height: 185px !important;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 6px;
@@ -394,6 +387,7 @@ body {
 
 .buy_description {
   margin: 8px 0 14px;
+  padding: 0 15px;
   font-weight: bold;
 }
 
@@ -410,7 +404,7 @@ body {
 }
 
 /* 2 колонки від 600px */
-@media (min-width: 600px) and (max-width: 999px) {
+@media (min-width: 600px) and (max-width: 1200px) {
   .buy_wrapper {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -418,7 +412,7 @@ body {
 }
 
 /* 3 колонки від 1000px */
-@media (min-width: 1000px) {
+@media (min-width: 1201px) {
   .buy_wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -487,4 +481,23 @@ body {
 .cart_section {
   color: #2b2b2b !important;
   margin: 0 15px;
+}
+
+.buy_wrapper > *:nth-last-child(1) {
+  justify-self: center;
+}
+
+/* Якщо 3 колонки — центр для останнього елемента, якщо він один у рядку */
+@media (min-width: 1201px) {
+  .buy_wrapper > *:nth-last-child(1):nth-child(7) {
+    grid-column: 2 / span 1;
+  }
+}
+
+/* Якщо 2 колонки — центр для останнього елемента, якщо він один у рядку */
+@media (min-width: 600px) and (max-width: 1200px) {
+  .buy_wrapper > *:nth-last-child(1):nth-child(7) {
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
 }

@@ -10,9 +10,9 @@ type CartItem = {
 };
 
 const products = [
-  { name: 'Challenge Day 1 & Autumn Cup II Day 1 Saturday September 20th', price: 35, img: '/ticket_white.png' },
-  { name: 'Challenge Day 2 & Autumn Cup II Day 2 Sunday September 21st', price: 35, img: '/ticket_white.png' },
-  { name: 'Challenge & Autumn Cup II 2 days Saturday & Sunday September 20 & 21', price: 50, img: '/tickets_white.png' },
+  { name: 'Challenge Day 1 & Autumn Cup II Day 1 Saturday September 20th', price: 35, img: '/ticket1.svg' },
+  { name: 'Challenge Day 2 & Autumn Cup II Day 2 Sunday September 21st', price: 35, img: '/ticket1.svg' },
+  { name: 'Challenge & Autumn Cup II 2 days Saturday & Sunday September 20 & 21', price: 50, img: '/ticket2.svg' },
   { name: 'Party Hat', price: 5, img: '/item1.png' },
   { name: 'Party blower', price: 5, img: '/item2.png' },
   { name: 'Hand Clapper', price: 3, img: '/item3.png' },

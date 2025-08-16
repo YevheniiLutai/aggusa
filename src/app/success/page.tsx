@@ -43,7 +43,7 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
             <FallingLeaves />
             <h1 className='success_title'> Thank you for the payment! ✅</h1>
             <a href={charge.receipt_url} target="_blank" rel="noopener noreferrer" className='cancel_button'>
-                Viev receipt 📄        
+                View receipt 📄        
             </a>
             <img src="/party.png" alt="Payment Success" />
         </div>
